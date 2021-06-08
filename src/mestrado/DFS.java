@@ -28,14 +28,14 @@ public class DFS<T> extends Searchable<T> {
 
         System.out.println(graph.getVertexs().get(0));
 
-        while (!stack.empty()) {									//enquanto houverem nós na pilha a busca não terminou
-            int adjacencyUnvisitedVertexIndex = getAdjacencyUnvisitedVertex(stack.peek());		//recupera o próximo nó adjacente não visitado
-            if (adjacencyUnvisitedVertexIndex == -1) {										//não existe ? Remove um nó da pilha
+        while (!stack.empty()) {
+            int adjacencyUnvisitedVertexIndex = getAdjacencyUnvisitedVertex(stack.peek());
+            if (adjacencyUnvisitedVertexIndex == -1) {
                 stack.pop();
-            } else { //existe
+            } else {
                 final Vertex<T> adjacencyUnvisitedVertex = graph.getVertexs().get(adjacencyUnvisitedVertexIndex);
                         
-                visited.add(adjacencyUnvisitedVertex.getItem());					//executa os passos da regra 1: visite, marque como visitado e empilhe
+                visited.add(adjacencyUnvisitedVertex.getItem());
 
                 stack.push(adjacencyUnvisitedVertex.getItem());
                 

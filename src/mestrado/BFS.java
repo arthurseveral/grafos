@@ -29,11 +29,11 @@ public class BFS<T> extends Searchable<T> {
         
         System.out.println(graph.getVertexs().get(0));
         
-        while (!queue.isEmpty()) {									//enquanto houverem nós na pilha a busca não terminou
+        while (!queue.isEmpty()) {
             final T head = queue.poll();
             
             int adjacencyUnvisitedVertexIndex;
-            while ((adjacencyUnvisitedVertexIndex = getAdjacencyUnvisitedVertex(head)) != -1) {										// Enquanto houver nós adjacentes não visitados
+            while ((adjacencyUnvisitedVertexIndex = getAdjacencyUnvisitedVertex(head)) != -1) {
                 final Vertex<T> adjacencyUnvisitedVertex = graph.getVertexs().get(adjacencyUnvisitedVertexIndex);
                         
                 visited.add(adjacencyUnvisitedVertex.getItem());
